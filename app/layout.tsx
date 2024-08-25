@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Dark Portfolio",
@@ -17,8 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange >
+      <body className={cn(inter.className, 'antialiased')}>
+        <ThemeProvider attribute="class" 
+          defaultTheme="dark"
+          enableSystem 
+          disableTransitionOnChange >
            {children}
         </ThemeProvider>
        </body>
