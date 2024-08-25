@@ -7,36 +7,29 @@ import { Button } from '../ui/button';
 
 export const Navbar = () => {
   return (
-    <header className='sticky'>
-    <div className='border-b  sticky z-10'>
-    <div className="container backdrop-blur relative">
-      <div className=' flex justify-between'>
-          <div className='relative'>
-          <div className='absolute w-full top-2 bottom-0 bg-[linear-gradient:]'></div>
-           <Image 
-            src={LogoImg}
-            alt='Logo' 
-            className='h-14 w-14 relative' 
-            />
-          </div>    {/* Menu Set JavaScrpit */}
-          <div className='border-b border-white border-opacity-30 w-10 h-10 justify-center items-center rounded-lg hidden'>
-              <Menu />
+    <header className="py-4  border-white/15 md:border-none sticky top-0 backdrop-blur  z-10">
+      <div className="absolute inset-0 backdrop-blur -z-10"></div>
+      <div className="container">
+        <div className="flex justify-between items-center md:border border-white/15 md:p-2.5 rounded-xl md:backdrop-blur -z-10 ">
+          <div>
+            <Link href={'/'}  className="border  h-10 w-10 rounded-lg inline-flex justify-center items-center border-white/15">
+              <Image src={LogoImg} alt="Logo" width={32} height={8} />
+            </Link>
           </div>
-          <nav className='gap-6 items-center hidden sm:flex z-10'>
-            <Link href={'/'} className='text-opacity-60  dark:hover:text-white transition hover:text-opacity-100 '>Upadate</Link>
-            <Link href={'/'} className='text-opacity-60 dark:hover:text-white transition hover:text-opacity-100 '>Upadate</Link>
-            <Link href={'/'} className='text-opacity-60 dark:hover:text-white transition hover:text-opacity-100 '>Upadate</Link>
-            <Link href={'/'} className='text-opacity-60 dark:hover:text-white transition hover:text-opacity-100 '>Upadate</Link>
-           
-          </nav>
-          <Button className='my-2 items-center inline-flex '>
-              Get Started
-           </Button>
+          <div className="hidden md:block ">
+            <nav className="flex gap-8 text-white/70 text-sm ">
+              <Link href={'/'} className=" text-white/70 hover:text-white trasnition">Featrus</Link>
+              <Link href={'/'} className=" text-white/70 hover:text-white trasnition">Works</Link>
+              <Link href={'/'} className=" text-white/70 hover:text-white trasnition">Price</Link>
+              <Link href={'/'} className=" text-white/70 hover:text-white trasnition">About</Link>
+            </nav>
+          </div>
+          <div className="flex gap-4 items-center">
+            <Button>Join me </Button>
+            {/*  */}
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
     </header>
-   
-  
   )
 };

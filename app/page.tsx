@@ -13,7 +13,9 @@ import { ProductShowcase } from "@/components/pages/ProductShowcase"
 const page = () => {
   return (
     <main>
+      <Navbar />
       <Hero />
+      <Banner />
       <LogoTicker />
       <Features />
       <ProductShowcase />
