@@ -7,7 +7,11 @@ import Image from "next/image";
 
 export const Hero = () => {
   return (
-    <section className="mt-3 overflow-clip relative py-10 sm:py-10  bg-[linear-gradient(to_bottom,#000,#200D42_34%,#F2A_65%,#A46EDB_82%)]">
+    <section
+      style={{
+        
+       }}
+      className="mt-3 overflow-clip relative py-24 sm:py-24  bg-[linear-gradient(to_bottom,#000,#200D42_34%,#F2A_65%,#A46EDB_82%)]">
       <div className="absolute h-[375px] w-[750px] sm:w-[1536px] lg:w-[2400px] lg:h-[1200px] sm:h-[768px] rounded-[100%] left-1/2 -translate-x-1/2 border
        border-[#B48CDE] bg-black bg-[radial-gradient(closest-side,#000_82%,#9560EB)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)]">
 
@@ -29,19 +33,19 @@ export const Hero = () => {
             </h1>
             <h2 className="font-extrabold sm:text-9xl mt-8 text-7xl gap-2 text-center tracking-tighter ">
             </h2>
-            <Image
+            {/* <Image
               src={CursorImage}
               height={200} width={200}
               alt="HeroImg"
-              className="absolute top-[108px] right-[476px] hidden lg:inline" />
+              className="absolute top-[108px] right-[476px] inline " />
             <Image
               src={MessageImage}
               height={200} width={200}
               alt="HeroImg"
-              className="absolute top-[56px] left-[498px] hidden " />
+              className="absolute top-[56px] left-[498px] inline" /> */}
           </div>
         </div>
-        <p className="text-xl mt-8 text-center max-w-md">Legeds Never Fail Centured</p>
+       
         <div className="mt-8 flex justify-center">
           <Button className="py-3 px-5 "> Started</Button>
         </div>

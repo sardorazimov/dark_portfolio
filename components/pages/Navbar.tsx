@@ -7,8 +7,9 @@ import { Button } from '../ui/button';
 
 export const Navbar = () => {
   return (
-    <header className='border-b'>
-    <div className="container ">
+    <header className='sticky'>
+    <div className='border-b  sticky z-10'>
+    <div className="container backdrop-blur relative">
       <div className=' flex justify-between'>
           <div className='relative'>
           <div className='absolute w-full top-2 bottom-0 bg-[linear-gradient:]'></div>
@@ -21,8 +22,8 @@ export const Navbar = () => {
           <div className='border-b border-white border-opacity-30 w-10 h-10 justify-center items-center rounded-lg hidden'>
               <Menu />
           </div>
-          <nav className='gap-6 items-center hidden sm:flex'>
-            <Link href={'/'} className='text-opacity-60 text-muted dark:hover:text-white transition hover:text-opacity-100 '>Upadate</Link>
+          <nav className='gap-6 items-center hidden sm:flex z-10'>
+            <Link href={'/'} className='text-opacity-60  dark:hover:text-white transition hover:text-opacity-100 '>Upadate</Link>
             <Link href={'/'} className='text-opacity-60 dark:hover:text-white transition hover:text-opacity-100 '>Upadate</Link>
             <Link href={'/'} className='text-opacity-60 dark:hover:text-white transition hover:text-opacity-100 '>Upadate</Link>
             <Link href={'/'} className='text-opacity-60 dark:hover:text-white transition hover:text-opacity-100 '>Upadate</Link>
@@ -33,7 +34,9 @@ export const Navbar = () => {
            </Button>
       </div>
     </div>
+    </div>
     </header>
+   
   
   )
 };

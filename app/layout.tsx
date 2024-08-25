@@ -3,6 +3,7 @@ import { Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme";
 import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/pages/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,9 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem 
           disableTransitionOnChange >
+            <div className="sticky">
+                <Navbar /> 
+            </div>
            {children}
         </ThemeProvider>
        </body>

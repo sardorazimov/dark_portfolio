@@ -1,3 +1,10 @@
+'use client'
+import { cn } from '@/lib/utils';
+import PlusIc from '@/public/assets/icons/plus.svg'
+import MinusIc from '@/public/assets/icons/minus.svg'
+import React from 'react';
+
+
 const items = [
   {
     question: "What payment methods do you accept?",
@@ -21,6 +28,50 @@ const items = [
   },
 ];
 
+
+
+const AccourdItem = ({ question, answer }: {
+  question: string,
+  answer: string,
+}) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+
+    <>
+      <div onClick={() => setIsOpen(!isOpen)}
+        className='flex items-center py-7 border-b border-white/30'
+      >
+        <span className='flex-1 text-lg font-bold  '>
+          {question} 
+        </span>
+        <div className='cursor-pointer'>
+          {isOpen ? <MinusIc /> :  <PlusIc  />}
+          
+        </div>
+      </div><div
+        className={cn("mt-4",{
+          hidden: !isOpen,
+          "": isOpen === true
+        })}>
+        {answer}
+      </div></>
+
+  )
+}
+
 export const FAQs = () => {
-  return null;
+  return (
+    <section className='py-20 sm:py-20'>
+      <div className="container">
+        <h1 className='text-center font-bold text-5xl sm:text-6xl tracking-tighter'>Asked You Quetsion</h1>
+        <p></p>
+        <div className='mt-12 max-w-[650px] mx-auto'>
+          {items.map(({question,answer}) => (
+            <AccourdItem  question={question}  answer={answer}  key={question}/>
+          )) }
+        </div>
+      </div>
+    </section>
+  )
 };
