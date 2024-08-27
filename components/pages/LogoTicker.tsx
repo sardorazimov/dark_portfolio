@@ -16,7 +16,11 @@ const images = [
   { src: apexLogo, alt: "Apex Logo" },
 ];
 
-export const LogoTicker = () => {
+export const LogoTicker = ({
+ 
+}:{
+
+}) => {
   return (
     <section className="mt-8 py-16 sm:py-24 ">
       <div className="container">
@@ -31,7 +35,8 @@ export const LogoTicker = () => {
         ">
          <div className="flex gap-16">
          {images.map((imageSrc) => (
-           <Image 
+           <Image
+            
             src={imageSrc.src}
             alt={imageSrc.alt}
             className="flex-none h-8 w-auto"
