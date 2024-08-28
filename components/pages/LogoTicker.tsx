@@ -2,7 +2,7 @@
 
 import { images } from "@/types/logotriker";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 
 
 export const LogoTicker = ({
@@ -13,7 +13,7 @@ export const LogoTicker = ({
   return (
     <div className="mt-8 py-16 sm:py-24 ">
       <div className="container">
-        <h2 className="text-xl text-center text-white/70">
+        <h2 className="text-3xl text-center text-white/70">
           Animated Logo Styles Linear Gradient
         </h2>
         <div className="overflow-hidden mt-9 before:contents-[' '] 
@@ -22,7 +22,19 @@ export const LogoTicker = ({
           before:bg-[linear-gradinet(to_right,#000,rgb(0,0,0,0))]
           after:bg-[linear-gradinet(to_right,#000,rgb(0,0,0,0))]
         ">
-         <div className="flex gap-16">
+         <motion.div 
+          initial={{
+            translateX: 0
+          }}
+          animate={{
+            translateX: '-100%'
+          }}
+          transition={{
+            duration: 20,
+            ease:'linear',
+            repeat: Infinity
+          }}
+           className="flex gap-16 flex-none  ">
            {images.map((img, index) => (
             <Image 
              key={index}
@@ -31,7 +43,15 @@ export const LogoTicker = ({
              className="h-11 w-auto flex-none"
             />
            ))}
-        </div>
+           {images.map((img, index) => (
+            <Image 
+             key={index}
+             src={img.src}
+             alt={img.alt}
+             className="h-11 w-auto flex-none"
+            />
+           ))}
+        </motion.div>
         </div>
       </div>
     </div>
